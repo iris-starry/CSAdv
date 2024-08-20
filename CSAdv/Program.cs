@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSAdv
+namespace CSAdv31
 {
     class Wanted<T>
     {
@@ -14,6 +14,14 @@ namespace CSAdv
             this.Value = value;
         }
     }
+
+    class WantedTest<T, U>
+           where T : IComparable
+           where U : IComparable, IDisposable
+    {
+
+    }
+
     internal class Program
     {
         static void Main(string[] args)
@@ -25,6 +33,8 @@ namespace CSAdv
             Console.WriteLine(wantedString.Value);
             Console.WriteLine(wantedInt.Value);
             Console.WriteLine(wantedDouble.Value);
+
+
         }
     }
 }
