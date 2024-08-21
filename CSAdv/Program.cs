@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSAdv
+namespace CSAdv31
 {
     class Wanted<T>
     {
@@ -14,6 +14,14 @@ namespace CSAdv
             this.Value = value;
         }
     }
+
+    class WantedTest<T, U>
+           where T : IComparable
+           where U : IComparable, IDisposable
+    {
+
+    }
+
     class SquareCalculator
     {
         public int this[int i]
@@ -40,6 +48,20 @@ namespace CSAdv
             Console.WriteLine(sc[11]);
             Console.WriteLine(sc[40]);
             sc[3] = 4;
+
+            // out 키워드 
+            Console.WriteLine("숫자 입력:");
+            int output;
+            bool result = int.TryParse(Console.ReadLine(), out output);
+            if (result)
+            {
+                Console.WriteLine("입력한 숫자:" + output);
+            }
+            else
+            {
+                Console.WriteLine("숫자를 입력해주세요");
+            }
+
         }
     }
 }
